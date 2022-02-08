@@ -1,0 +1,9 @@
+/temp
+/tests
+**/output
+
+# Directories and files starting with ---
+**/---*
+
+# Directories and files starting with NOGIT_
+**/NOGIT_*

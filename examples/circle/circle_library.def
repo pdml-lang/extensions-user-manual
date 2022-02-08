@@ -1,0 +1,13 @@
+[!def
+    ~~~
+    const PI = 3.1415926;
+
+    function computeCircumference ( radius ) {
+        return 2 * PI * radius;
+    }
+
+    function computeArea ( radius ) {
+        return PI * radius * radius;
+    }
+    ~~~
+]

@@ -1,0 +1,10 @@
+[ch [title Syntax Extensions]
+
+    [!ins-file path=01_comments.pml]
+    [!ins-file path=02_attributes.pml]
+    [!ins-file path=03_escape_sequences.pml]
+    [!ins-file path=04_namespaces.pml]
+    [!ins-file path=05_named_closing_tags.pml]
+    [!ins-file path=06_virtual_root_node.pml]
+    [!ins-file path=07_processing_instructions.pml]
+]
