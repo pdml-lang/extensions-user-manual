@@ -1,8 +1,10 @@
 [ch (id=type_nodes) [title Type Nodes]
 
     Type nodes denote data types.
-    
-    They are used to parse, validate, and optionally transform data nodes.
+
+    They are all associated with the predefined namespace prefix [c t] ([b [i t]]ype).
+
+    Type nodes are used to parse, validate, and optionally transform data nodes.
 
     [note
         If you are a programmer you can conceptually think of PDML types as types in a programming language (string, number, boolean, etc.).
@@ -32,10 +34,10 @@
 
             In this case, a data node contains a type node that contains the data:
             [code
-                [birthdate [!date 1999-12-31]]
-                           ^^^^^^           ^
+                [birthdate [t:date 1999-12-31]]
+                           ^^^^^^^           ^
             code]
-            Now the parser ensures that the content of [c !date] is a valid date.
+            Now the parser ensures that the content of [c t:date] is a valid date.
             It will generate an error if the node's content is invalid.
 
             The application reading the parser's output will only see a node [c birthdate] with text content [c 1999-12-31], as if the document simply contained:
@@ -56,7 +58,7 @@
 
         [el [header Configuration by node name]
 
-            A more practical approach is to assign a specific type to all nodes with a specific name (e.g. all nodes with name N are of type T).
+            A more practical approach is to assign a specific type to all nodes with a specific name (e.g. all nodes with name [c N] are of type [c T]).
             
             This can be done programmatically by configuring the parser.
             
@@ -66,12 +68,15 @@
             [code
                 [birthdate 1999-12-31]
             code]
-            ... but the parser knows and checks that all [c birthdate] nodes contain valid dates.
+            ... but the parser checks that all [c birthdate] nodes contain valid dates.
         ]
 
-        [el [header Schema (not implemented yet)]
+        [el [header Schema]
+
+            [note PDML schemas are not specified and not implemented yet.]
 
             A schema is itself a PDML document that assigns types to data nodes.
+            It can also define new domain-specific types, based on standard PDML types.
             A schema can be:
             [list
                 [el [b embedded]: Schema and data nodes are stored in the same document. The schema must be defined at the beginning of the document.]
@@ -80,7 +85,7 @@
         ]
     ]
 
-    The full list of PDML types is documented in chapter [link url=[!get pdml_docs_extensions_url]reference_manual/index.html#types text=Types] of the reference manual.
+    The full list of PDML types is documented in chapter [link url=[u:get pdml_docs_extensions_url]reference_manual/index.html#types text=Types] of the reference manual.
 
     [note
         PDML types are a work-in-progress.

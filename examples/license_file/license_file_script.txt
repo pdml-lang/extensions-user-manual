@@ -1,4 +1,4 @@
-[!script
+[s:script
     ~~~
     const licenseFile = "resources/license.txt"
     if ( fileUtils.exists ( licenseFile ) ) {
